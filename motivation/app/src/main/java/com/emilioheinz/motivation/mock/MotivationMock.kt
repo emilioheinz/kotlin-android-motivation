@@ -1,11 +1,15 @@
 package com.emilioheinz.motivation.mock
 
 import com.emilioheinz.motivation.util.MotivationConstants
+import java.util.*
 
-class Phrase(description: String, category: Int)
+fun Int.random(): Int = Random().nextInt(this)
+
+class Phrase(val description: String, val category: Int)
 
 class MotivationMock {
 
+    private val ALL = MotivationConstants.PHRASE_FILTER.ALL
     private val MORNING = MotivationConstants.PHRASE_FILTER.MORNING
     private val HAPPY = MotivationConstants.PHRASE_FILTER.HAPPY
 
@@ -24,5 +28,19 @@ class MotivationMock {
         Phrase("Se você acredita, faz toda a diferença.", MORNING),
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada!", MORNING)
     )
+
+    fun getPhrase(value: Int): String {
+        var filteredList: List<Phrase>
+
+        if (value == ALL) {
+            filteredList = mListPhrases
+        } else {
+            filteredList = mListPhrases.filter { it.category == value }
+        }
+
+        val randomVal = filteredList.size.random()
+
+        return filteredList[randomVal].description
+    }
 
 }

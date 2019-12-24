@@ -4,19 +4,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.emilioheinz.motivation.R
+import com.emilioheinz.motivation.mock.MotivationMock
 import com.emilioheinz.motivation.util.MotivationConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
+    private val mMock = MotivationMock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setListeners()
+
         handleFilter(R.id.image_all)
+        refreshPhrase()
     }
 
     private fun setListeners() {
@@ -33,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (id in listId) {
             handleFilter(id)
-        } else {
+        } else if (id == R.id.button_new_phrase) {
             refreshPhrase()
         }
     }
@@ -53,8 +57,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             mFilter = MotivationConstants.PHRASE_FILTER.HAPPY
             image_happy.setImageResource(R.drawable.ic_happy_selected)
         }
+
+        refreshPhrase()
     }
 
-    private fun refreshPhrase() {}
+    private fun refreshPhrase() {
+        text_phrase.text = mMock.getPhrase(mFilter)
+    }
 
 }
