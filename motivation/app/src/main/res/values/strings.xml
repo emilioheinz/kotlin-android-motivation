@@ -3,4 +3,5 @@
     <string name="inform_your_name">Informe seu nome</string>
     <string name="save">SALVAR</string>
     <string name="new_phrase">NOVA FRASE</string>
+    <string name="inform_your_name_alert">Por favor, informe o seu nome.</string>
 </resources>

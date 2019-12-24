@@ -1,8 +1,10 @@
 package com.emilioheinz.motivation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.emilioheinz.motivation.util.MotivationConstants
 import com.emilioheinz.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_splash.*
@@ -23,7 +25,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         val id = v.id
 
-        if(id == R.id.button_save){
+        if (id == R.id.button_save) {
             handleSave()
         }
     }
@@ -31,6 +33,16 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleSave() {
         val name: String = edit_name.text.toString()
 
-        mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+        if (name.isNullOrEmpty()) {
+            Toast.makeText(this, getString(R.string.inform_your_name_alert), Toast.LENGTH_LONG)
+                .show()
+        } else {
+            mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }
     }
 }
