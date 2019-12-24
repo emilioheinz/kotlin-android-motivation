@@ -1,7 +1,8 @@
-package com.emilioheinz.motivation
+package com.emilioheinz.motivation.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.emilioheinz.motivation.R
 
 class MainActivity : AppCompatActivity() {
 

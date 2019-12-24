@@ -1,10 +1,11 @@
-package com.emilioheinz.motivation
+package com.emilioheinz.motivation.views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.emilioheinz.motivation.R
 import com.emilioheinz.motivation.util.MotivationConstants
 import com.emilioheinz.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_splash.*
