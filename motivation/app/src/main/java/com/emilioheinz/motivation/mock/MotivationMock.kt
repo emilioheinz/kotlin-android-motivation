@@ -5,7 +5,7 @@ import com.emilioheinz.motivation.util.MotivationConstants
 class Phrase(description: String, category: Int)
 
 class MotivationMock {
-    
+
     private val MORNING = MotivationConstants.PHRASE_FILTER.MORNING
     private val HAPPY = MotivationConstants.PHRASE_FILTER.HAPPY
 

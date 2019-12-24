@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/image_all_inclusive"
+            android:id="@+id/image_all"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
