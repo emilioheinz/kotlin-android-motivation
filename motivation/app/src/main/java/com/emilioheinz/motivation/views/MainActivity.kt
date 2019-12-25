@@ -6,21 +6,26 @@ import android.view.View
 import com.emilioheinz.motivation.R
 import com.emilioheinz.motivation.mock.MotivationMock
 import com.emilioheinz.motivation.util.MotivationConstants
+import com.emilioheinz.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
+    private lateinit var mSecurityPreferences: SecurityPreferences
     private val mMock = MotivationMock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mSecurityPreferences = SecurityPreferences(this)
+
         setListeners()
 
         handleFilter(R.id.image_all)
         refreshPhrase()
+        verifyUserName()
     }
 
     private fun setListeners() {
@@ -63,6 +68,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun refreshPhrase() {
         text_phrase.text = mMock.getPhrase(mFilter)
+    }
+
+    private fun verifyUserName() {
+        text_user_name.text = mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
     }
 
 }
