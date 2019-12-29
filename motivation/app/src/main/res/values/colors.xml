@@ -9,4 +9,5 @@
     <color name="menuItemUnselected">#CECECE</color>
     <color name="textButton">#FFFFFF</color>
     <color name="textLightGray">#F9F9F9</color>
+    <color name="primaryText">#FFFFFF</color>
 </resources>
