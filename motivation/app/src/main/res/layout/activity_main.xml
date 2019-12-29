@@ -4,42 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity"
-    android:background="@drawable/bg_splash">
+    android:background="@drawable/bg_splash"
+    tools:context=".views.MainActivity">
 
     <LinearLayout
         android:id="@+id/linear_menu_filter"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:background="@color/colorPrimary"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorPrimary">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/image_all"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_all_inclusive_unselected" />
+            android:src="@drawable/ic_all_inclusive_unselected"
+            style="@style/topBarIcons"/>
 
         <ImageView
             android:id="@+id/image_sun"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_sun_unselected" />
+            android:src="@drawable/ic_sun_unselected"
+            style="@style/topBarIcons"/>
 
         <ImageView
             android:id="@+id/image_happy"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:src="@drawable/ic_happy_unselected" />
+            android:src="@drawable/ic_happy_unselected"
+            style="@style/topBarIcons"/>
 
     </LinearLayout>
 
@@ -47,38 +38,33 @@
         android:id="@+id/text_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_menu_filter"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/primaryText"
         android:textSize="16sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_menu_filter" />
 
     <TextView
         android:id="@+id/text_phrase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginHorizontal="35dp"
-        android:textStyle="bold"
-        android:textSize="20sp"
+        android:gravity="center"
         android:textColor="@color/primaryText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_new_phrase"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="@string/new_phrase"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="30dp"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/textButton"
-        />
+        style="@style/defaultButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

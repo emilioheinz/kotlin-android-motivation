@@ -52,7 +52,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
     private fun verifyUserName() {
         val userName = mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
 
-        if (userName.isNotEmpty()){
+        if (userName.isNotEmpty()) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 

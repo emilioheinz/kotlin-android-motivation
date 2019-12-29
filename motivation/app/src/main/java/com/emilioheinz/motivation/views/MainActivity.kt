@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyUserName() {
-        text_user_name.text = "Olá " + mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
+        text_user_name.text =
+            "Olá " + mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
     }
 
 }
